@@ -1,0 +1,11 @@
+modules:
+  jira:issuePanel:
+    - key: novida-hello-world-panel
+      function: main
+      title: Forge app for Naphtali
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: main
+      handler: index.run
+app:
+  id: 'ZklH4fG0HANX5Hgq4auN824C'
