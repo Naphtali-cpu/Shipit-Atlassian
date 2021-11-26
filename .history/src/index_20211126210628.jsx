@@ -12,18 +12,16 @@ const fetchCommentsForIssue = async (issueId) => {
 
 const App = () => {
   const context = useProductContext();
-  const [comments] = useState(async () => await fetchCommentsForIssue(context.platformContext.issueKey));
-
-  console.log(`Number of comments on this issue: ${comments.length}`);
+  const [comments] = useState(async () => await fetchCommentsForIssue(context.platformContext.type));
+  // const comments = useState(async () => await fetchCommentsForIssue(context.platformContext.issueKey));
+  // const clothing = ['shoes', 'shirts', 'socks', 'sweaters'];
+  // console.log('Number of Issues'  comments.length);
+  console.log('Number of Issues: ' ,comments.length);
 
   return (
     <Fragment>
       <Text>Hello world!</Text>
-      <Text>It Finally worked!</Text>
-      <Text>
-        Number of comments on this issue: {comments.length}
-      </Text>
-  </Fragment>
+    </Fragment>
   );
 };
 

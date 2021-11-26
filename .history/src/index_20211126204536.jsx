@@ -14,16 +14,12 @@ const App = () => {
   const context = useProductContext();
   const [comments] = useState(async () => await fetchCommentsForIssue(context.platformContext.issueKey));
 
-  console.log(`Number of comments on this issue: ${comments.length}`);
+  console.log(`Number of comments on this issue: {comments.length}`);
 
   return (
     <Fragment>
       <Text>Hello world!</Text>
-      <Text>It Finally worked!</Text>
-      <Text>
-        Number of comments on this issue: {comments.length}
-      </Text>
-  </Fragment>
+    </Fragment>
   );
 };
 

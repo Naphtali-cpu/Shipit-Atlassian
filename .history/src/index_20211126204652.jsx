@@ -1,5 +1,5 @@
+import ForgeUI, { Fragment, Image, IssuePanel, Text, render, useProductContext, useState } from "@forge/ui";
 import api, { route } from "@forge/api";
-import ForgeUI, { render, Fragment, Text, IssuePanel, useProductContext, useState } from "@forge/ui";
 
 const fetchCommentsForIssue = async (issueId) => {
   const res = await api
@@ -14,16 +14,12 @@ const App = () => {
   const context = useProductContext();
   const [comments] = useState(async () => await fetchCommentsForIssue(context.platformContext.issueKey));
 
-  console.log(`Number of comments on this issue: ${comments.length}`);
+  // console.log(`Number of comments on this issue: ${comments.length}`);
 
   return (
     <Fragment>
-      <Text>Hello world!</Text>
-      <Text>It Finally worked!</Text>
-      <Text>
-        Number of comments on this issue: {comments.length}
-      </Text>
-  </Fragment>
+      <Text>Hello demoship here are the Number of comments on this issue: {comments.length}</Text>
+    </Fragment>
   );
 };
 

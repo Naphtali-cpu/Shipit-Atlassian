@@ -1,5 +1,5 @@
 import api, { route } from "@forge/api";
-import ForgeUI, { render, Fragment, Text, IssuePanel, useProductContext, useState } from "@forge/ui";
+import ForgeUI, { render, Fragment, Text, IssuePanel, useProductContext, useState, Image } from "@forge/ui";
 
 const fetchCommentsForIssue = async (issueId) => {
   const res = await api
@@ -13,17 +13,14 @@ const fetchCommentsForIssue = async (issueId) => {
 const App = () => {
   const context = useProductContext();
   const [comments] = useState(async () => await fetchCommentsForIssue(context.platformContext.issueKey));
+  const image = Image();
 
-  console.log(`Number of comments on this issue: ${comments.length}`);
+  // console.log(`Number of comments on this issue: {comments.length}`);
 
   return (
     <Fragment>
       <Text>Hello world!</Text>
-      <Text>It Finally worked!</Text>
-      <Text>
-        Number of comments on this issue: {comments.length}
-      </Text>
-  </Fragment>
+    </Fragment>
   );
 };
 
