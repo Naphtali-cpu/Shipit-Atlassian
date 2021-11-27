@@ -80,7 +80,7 @@ const App = () => {
         alt="homer"
       />
       <Heading size="medium">Number of comments on this issue: {comments.length}</Heading>
-      <Heading size="medium">Number of uncomplete tasks: {tasks.length}</Heading>
+      <Text>Number of uncomplete tasks: {tasks.length}</Text>
       <NewTaskForm onCreate={createTask} />
       <TaskList tasks={tasks} onUpdate={updateTask} onDelete={deleteTask} />
     </Fragment>

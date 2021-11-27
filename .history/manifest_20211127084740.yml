@@ -12,5 +12,5 @@ app:
 
 permissions:
   scopes:
-    - 'read:jira-work'
+    # - 'read:jira-work'
     - 'write:jira-work'

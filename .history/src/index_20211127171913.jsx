@@ -5,11 +5,6 @@ import ForgeUI, {
   IssuePanel,
   useProductContext,
   useState,
-  Heading,
-  DatePicker,
-  Text,
-  Image,
-
 } from "@forge/ui";
 
 import shortid from "shortid";
@@ -33,6 +28,9 @@ const App = () => {
     async () => await fetchCommentsForIssue(context.platformContext.issueKey)
   );
 
+  const names = ['Matthew', 'Rachel', 'Virginia', 'Naphtali']
+
+  console.log(`Number of comments on this issue: ${comments.length}`);
   const updateTask = async (id, isChecked) => {
     await updateTasks((tasks) =>
       tasks.map((task) => {
@@ -62,26 +60,10 @@ const App = () => {
     ]);
   };
 
-  const createDate = async (text) => {
-    await updateTasks((date) => [
-      ...date,
-      {
-        id: shortid.generate(),
-        text,
-      },
-    ]);
-  };
-
   return (
     <Fragment>
-      <Heading size="large">Tasks Manager</Heading>
-      <Image
-        src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-        alt="homer"
-      />
-      <Heading size="medium">Number of comments on this issue: {comments.length}</Heading>
-      <Heading size="medium">Number of uncomplete tasks: {tasks.length}</Heading>
       <NewTaskForm onCreate={createTask} />
+
       <TaskList tasks={tasks} onUpdate={updateTask} onDelete={deleteTask} />
     </Fragment>
   );

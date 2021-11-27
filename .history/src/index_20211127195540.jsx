@@ -79,8 +79,8 @@ const App = () => {
         src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
         alt="homer"
       />
-      <Heading size="medium">Number of comments on this issue: {comments.length}</Heading>
-      <Heading size="medium">Number of uncomplete tasks: {tasks.length}</Heading>
+      <Heading size="large">Number of comments on this issue: {comments.length}</Heading>
+      <Text>Number of uncomplete tasks: {tasks.length}</Text>
       <NewTaskForm onCreate={createTask} />
       <TaskList tasks={tasks} onUpdate={updateTask} onDelete={deleteTask} />
     </Fragment>

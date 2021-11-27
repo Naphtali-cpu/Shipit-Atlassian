@@ -7,9 +7,7 @@ import ForgeUI, {
   useState,
   Heading,
   DatePicker,
-  Text,
-  Image,
-
+  Text
 } from "@forge/ui";
 
 import shortid from "shortid";
@@ -32,6 +30,7 @@ const App = () => {
   const [comments] = useState(
     async () => await fetchCommentsForIssue(context.platformContext.issueKey)
   );
+  console.log(tasks.length)
 
   const updateTask = async (id, isChecked) => {
     await updateTasks((tasks) =>
@@ -75,12 +74,8 @@ const App = () => {
   return (
     <Fragment>
       <Heading size="large">Tasks Manager</Heading>
-      <Image
-        src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-        alt="homer"
-      />
-      <Heading size="medium">Number of comments on this issue: {comments.length}</Heading>
-      <Heading size="medium">Number of uncomplete tasks: {tasks.length}</Heading>
+      <Text>Number of comments on this issue: {comments.length}</Text>
+      <Text>Number of uncomplete tasks: {tasks.length}</Text>
       <NewTaskForm onCreate={createTask} />
       <TaskList tasks={tasks} onUpdate={updateTask} onDelete={deleteTask} />
     </Fragment>
